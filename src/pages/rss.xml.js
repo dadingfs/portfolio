@@ -5,7 +5,9 @@ export async function get() {
         title: 'Astro Learner | Blog',
         description: 'My journey learning Astro',
         site: 'https://dadingfs.netlify.app',
-        items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
+        items: await pagesGlobToRssItems(
+            import.meta.glob('./blog/*.{md,mdx}'),
+        ),
         customData: `<language>en-us</language>`,
     });
 }
